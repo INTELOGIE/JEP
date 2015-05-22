@@ -30,10 +30,18 @@ The ActionObject
 {
   controller : "controller name",
   action : "action name",
-  params : [{ParamObject}]
+  params : [{ParamObject}],
+  onError: "What action to do if this action fails"
 }
 
 ```
+
+Field name | Description | Type | Required
+---------- | ----------- | ---- | --------
+controller | Name of the controller class that will be called | string | Yes
+action | Name of the action that will be called | string | Yes
+params | Array of parameters for the action | Array of ParamObject | Optional
+onError | Indicates what to do if action fails. Possible values are : continue or stop | string (enum) | Optional (default stop) 
 
 The ParamObject 
 ```javascript
@@ -43,6 +51,11 @@ The ParamObject
 }
 
 ```
+
+Field name | Description | Type | Required
+---------- | ----------- | ---- | --------
+name | Name of parameter | string | Yes
+value | Value of parameter | mixed | Yes
 
 ### Response
 
